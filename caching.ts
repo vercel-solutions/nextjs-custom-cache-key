@@ -154,5 +154,7 @@ export function cacheKeyMiddleware(req: NextRequest): NextResponse {
   }
 
   console.log("Rewrite to:", url.pathname);
-  return NextResponse.rewrite(url);
+  const res = NextResponse.rewrite(url);
+  // res.headers.set("CDN-Cache-Control", "max-age=10, stale-while-revalidate=60");
+  return res;
 }
