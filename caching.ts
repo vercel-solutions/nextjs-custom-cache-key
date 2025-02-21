@@ -54,7 +54,6 @@ export function cacheKey(cacheKey: string): {
 	const cacheKeyId = parts.shift();
 
 	if (cacheKeyId !== CACHE_KEY_ID) {
-		console.log("NOT FOUND");
 		notFound();
 	}
 
